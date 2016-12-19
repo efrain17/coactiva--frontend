@@ -1,1 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
+#header-container {
+  background-color: #99c84a;
+  color: white;
+}
+
+#menu-container {
+  background-color: #f7f7f9;
+}
+
+.form-control:focus {
+  border-color: #99c84a;
+}
+
+.btn.btn-platzi {
+  background-color: #99c84a;
+  color: white;
+}
+
+.btn.btn-platzi:hover {
+  background-color: #8ab542;
+}
+
+.myblog {   
+    margin-top: 3px
+}
+
+.table-fixed{
+  width: 100%;
+  background-color: #f3f3f3;
+  tbody{
+    height:200px;
+    overflow-y:auto;
+    width: 100%;
+    }
+  thead,tbody,tr,td,th{
+    display:block;
+  }
+  tbody{
+    td{
+      float:left;
+    }
+  }
+  thead {
+    tr{
+      th{
+        float:left;
+       background-color: #f39c12;
+       border-color:#e67e22;
+      }
+    }
+  }
+}
