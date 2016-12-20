@@ -24,7 +24,7 @@ export class ApiService {
 
   getHeadilneId(id:String){
   	return this.getHeadlines()
-  		.then(headlines => headlines.find(headline=> headline.cedulapersona===id))
+  		.then(headlines => headlines.find(headline=> headline.cedulapersona==id))
   }
 
 
