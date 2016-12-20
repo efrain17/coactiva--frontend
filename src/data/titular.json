@@ -1,0 +1,24 @@
+[
+      {
+      "cedulapersona": "1306476753",
+      "tipo": "Natural",
+      "apellidos": "LOPEZ MERO",
+      "nombres": "MARIA VICTORIA",
+      "telefono": "",
+      "email": "",
+      "cuentaciudadano": "BSJ-A-0005",
+      "codanterior": "1-A-6",
+      "disponeagua": "SI",
+      "tiposervicioagua": "Doméstico",
+      "disponealcantarillado": "SI",
+      "usoalcantarillado": "Doméstico",
+      "estadoalcantarillado": "EN SERVICIO",
+      "direccion": "BARRIO SAN JOSE",
+      "numtitulo": "SAP-0801-2013/6-12851",
+      "año": "2013",
+      "mes": "6",
+      "totalemitido": "4.2",
+      "estado": "Emitido"
+   }
+]
+   
