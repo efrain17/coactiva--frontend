@@ -11,7 +11,6 @@ import { AppComponent } from './app.component';
 import { JuicioCoactivaComponent } from './juicio-coactiva/juicio-coactiva.component';
 import { TitularesComponent } from './titulares/titulares.component';
 import { DataFilterPipe }   from './titulares/data-filter.pipe';
-import { DemoComponent } from './dataTable/demo.component';
 import { SeleccionComponent } from './seleccion/seleccion.component';
 
 @NgModule({
@@ -20,7 +19,6 @@ import { SeleccionComponent } from './seleccion/seleccion.component';
     JuicioCoactivaComponent,
     TitularesComponent,
     DataFilterPipe,
-    DemoComponent,
     SeleccionComponent,
   ],
   imports: [
