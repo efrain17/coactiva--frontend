@@ -19,3 +19,15 @@ export interface Headline{
   totalemitido : string,
   estado : string
 }
+
+
+export interface Cartera {
+  codigo_coactiva: string, 
+  concepto: string,
+  nombre_cliente: string,
+  estado: string, 
+  monto: string,  
+  fecha_emision: string, 
+  fecha_vencimiento: string
+  
+}
