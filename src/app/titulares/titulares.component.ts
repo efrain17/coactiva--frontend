@@ -14,12 +14,12 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 export class TitularesComponent implements OnInit {
 
-  public data;
-  public filterQuery = "";
-  public rowsOnPage = 5;
-  public sortBy = "codigo_coactiva";
-  public sortOrder = "asc";
-  public numRegisters:number ;
+  private data;
+  private filterQuery = "";
+  private rowsOnPage = 5;
+  private sortBy = "codigo_coactiva";
+  private sortOrder = "asc";
+  private numRegisters:number ;
   closeResult: string;
 
 

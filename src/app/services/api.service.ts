@@ -33,6 +33,22 @@ export class ApiService {
       .catch(this.error)
   }
 
+  getCarteraEmitidos(){
+    let url='/data/carteraEmitido.json';
+    return this.http.get(url)
+      .toPromise()
+      .then(response => response.json())
+      .catch(this.error)
+  }
+
+  getCarteraVencidos(){
+    let url='/data/cartera.json';
+    return this.http.get(url)
+      .toPromise()
+      .then(response => response.json())
+      .catch(this.error)
+  }
+
   error(error:any){
 		return Promise.reject(error.message || error)
   }
