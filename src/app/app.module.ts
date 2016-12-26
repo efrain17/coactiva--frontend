@@ -12,6 +12,7 @@ import { JuicioCoactivaComponent } from './juicio-coactiva/juicio-coactiva.compo
 import { TitularesComponent } from './titulares/titulares.component';
 import { DataFilterPipe }   from './titulares/data-filter.pipe';
 import { SeleccionComponent } from './seleccion/seleccion.component';
+import { SelectTitularComponent } from './select-titular/select-titular.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { SeleccionComponent } from './seleccion/seleccion.component';
     TitularesComponent,
     DataFilterPipe,
     SeleccionComponent,
+    SelectTitularComponent,
   ],
   imports: [
     BrowserModule,

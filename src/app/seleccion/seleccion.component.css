@@ -1,0 +1,13 @@
+.myModal {
+  max-width: 900px !important;
+}
+
+.dark-modal .modal-content {
+      background-color: black;
+      color: white;
+      max-width: 1200px !important;
+    }
+
+ .modal-content2 {
+      max-width: 1200px !important;
+    }

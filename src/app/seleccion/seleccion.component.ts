@@ -1,10 +1,12 @@
-import {Component} from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
+
 
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-seleccion',
   templateUrl: './seleccion.component.html',
+  encapsulation: ViewEncapsulation.None,
   styleUrls: ['./seleccion.component.css']
 })
 

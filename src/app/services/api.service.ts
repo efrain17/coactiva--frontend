@@ -6,6 +6,7 @@ import 'rxjs/add/operator/toPromise';
 
 export class ApiService {
   numRegisters: number
+  BASE_URL=""
 
   constructor(private http:Http) {
     this.numRegisters=0
@@ -40,6 +41,14 @@ export class ApiService {
   	return this.getHeadlines()
   		.then(headlines => headlines.find(headline=> headline.cedulapersona==id))
   }
+
+  //oden pago 
+  ordenPago(params: String) {
+        return this.http.get(this.BASE_URL + '/ordpago?' +params)
+            .toPromise()
+            .then(response=> response.toString())
+            .catch(this.error)
+    }
 
 
 }
