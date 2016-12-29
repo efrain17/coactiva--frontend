@@ -17,12 +17,12 @@
                 <div class="col-xs-6">
                     <div class="row">
                         <select class="form-control input-sm" [(ngModel)]="sortBy">
-                            <option ngValue="codigo_coactiva">Codigo</option>
-                            <option ngValue="concepto">Concepto</option>
-                            <option ngValue="nombre_cliente">Nombre</option>
-                            <option ngValue="monto">Monto</option>
-                            <option ngValue="fecha_emision">Emision</option>
-                            <option ngValue="fecha_vencimiento">Vencimiento</option>
+                            <option ngValue="CodigoCatastral">Codigo</option>
+                            <option ngValue="Nombres">Nombres</option>
+                            <option ngValue="Estado">Estado</option>
+                            <option ngValue="ValorEmitido">Valor</option>
+                            <option ngValue="Ano">Año</option>
+                            <option ngValue="Dirección">Direccion</option>
                         </select>
                     </div>
                 </div>
@@ -46,39 +46,34 @@
                 <thead>
                 <tr>
                     <th>
-                        <mfDefaultSorter by="codigo_coactiva">Codigo</mfDefaultSorter>
+                        <mfDefaultSorter by="CodigoCatastral">Codigo</mfDefaultSorter>
                     </th>
                     <th>
-                        <mfDefaultSorter by="concepto">Concepto</mfDefaultSorter>
+                        <mfDefaultSorter by="Nombres">Nombres</mfDefaultSorter>
                     </th>
                     <th>
-                        <mfDefaultSorter by="nombre_cliente">Nombre</mfDefaultSorter>
+                        <mfDefaultSorter by="Estado">Estado</mfDefaultSorter>
                     </th>
                     <th>
-                        <span>Estado</span>
+                        <mfDefaultSorter by="ValorEmitido">Valor</mfDefaultSorter>
                     </th>
                     <th>
-                        <mfDefaultSorter by="monto">Monto</mfDefaultSorter>
+                        <mfDefaultSorter by="Ano">Año</mfDefaultSorter>
                     </th>
                     <th>
-                        <mfDefaultSorter by="fecha_emision">Emision</mfDefaultSorter>
-                    </th>
-                    <th>
-                        <mfDefaultSorter by="fecha_vencimiento">vencimiento</mfDefaultSorter>
-                    </th>
-                    
+                        <mfDefaultSorter by="Direccion">Direccion</mfDefaultSorter>
+                    </th>           
                 </tr>
                 
                 </thead>
                 <tbody>
                 <tr *ngFor="let item of mf.data" (click)="open(content,item)" >
-                    <td>{{item.codigo_coactiva}}</td>
-                    <td>{{item.concepto}}</td>
-                    <td>{{item.nombre_cliente}}</td>
-                    <td>{{item.estado | uppercase}}</td>
-                    <td>{{item.monto}}</td>
-                    <td>{{item.fecha_emision}}</td>
-                    <td>{{item.fecha_vencimiento}}</td>      
+                    <td>{{item.CodigoCatastral}}</td>
+                    <td>{{item.Nombres}}</td>
+                    <td>{{item.Estado}}</td>
+                    <td>{{item.Valor}}</td>
+                    <td>{{item.Ano}}</td>
+                    <td>{{item.Direccion}}</td>    
                 </tr>
                 </tbody> 
                 <tfoot>
