@@ -6,7 +6,7 @@ import 'rxjs/add/operator/toPromise';
 
 export class ApiService {
   numRegisters: number
-  BASE_URL=""
+  BASE_URL="http://localhost:9000"
 
   constructor(private http:Http) {
     this.numRegisters=0
@@ -26,7 +26,15 @@ export class ApiService {
   }
 
   getCarteraDeudores(){
-    let url='/data/cartera.json';
+    let url=this.BASE_URL+'/deudores';
+    return this.http.get(url)
+      .toPromise()
+      .then(response => response.json())
+      .catch(this.error)
+  }
+
+  getDeudoresPaginado(pag){
+    let url=this.BASE_URL+'/deudores/'+pag;
     return this.http.get(url)
       .toPromise()
       .then(response => response.json())

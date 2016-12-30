@@ -16,8 +16,8 @@ export class TitularesComponent implements OnInit {
 
   private data;
   private filterQuery = "";
-  private rowsOnPage = 5;
-  private sortBy = "codigo_coactiva";
+  private rowsOnPage = 10;
+  private sortBy = "CodigoCatastral";
   private sortOrder = "asc";
   private numRegisters:number ;
   closeResult: string;

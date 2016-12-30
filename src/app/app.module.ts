@@ -15,11 +15,12 @@ import { DataFilterPipe }   from './titulares/data-filter.pipe';
 import { SeleccionComponent } from './seleccion/seleccion.component';
 import { SelectTitularComponent } from './select-titular/select-titular.component';
 import { TitularesEmitidosComponent } from './titulares-emitidos/titulares-emitidos.component';
+import { MypagtableComponent } from './mypagtable/mypagtable.component';
 
 const routes = [
 {
   path: '', 
-  component : TitularesComponent
+  component : MypagtableComponent
 },
 {
   path: 'titulares', 
@@ -45,6 +46,7 @@ const routes = [
     SeleccionComponent,
     SelectTitularComponent,
     TitularesEmitidosComponent,
+    MypagtableComponent,
   ],
   imports: [
     BrowserModule,
