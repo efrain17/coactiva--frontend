@@ -16,14 +16,14 @@ export class TitularesEmitidosComponent implements OnInit {
   private data;
   private filterQuery = "";
   private rowsOnPage = 5;
-  private sortBy = "codigo_coactiva";
+  private sortBy = "nombres";
   private sortBytitulares= "emitidos";
   private sortOrder = "asc";
   private numRegisters:number ;
   closeResult: string;
 
   constructor(private http: Http,
-  			  private as: ApiService,
+  			      private as: ApiService,
               private titularesSv:TitularesService,
               private modalService: NgbModal ) {   	
   }
@@ -49,10 +49,16 @@ export class TitularesEmitidosComponent implements OnInit {
   public sortByWordLength = (a: any) => {
 	    return a.city.length;
   }
+
+  setToSeleccion(array){
+      // hacer consulta para filtrar todas las deudas de un titular s
+      this.titularesSv.setTitularSelected(array)
+      this.titularesSv.setModalSelected("ordenPago")
+  }
   
   open(content,array) {
-      this.titularesSv.setTitularSelected(array)
-      
+      this.setToSeleccion(array)
+      console.log("abriendo")
       this.modalService.open(content).result.then((result) => {
         this.closeResult = `Closed with: ${result}`;
       }, (reason) => {

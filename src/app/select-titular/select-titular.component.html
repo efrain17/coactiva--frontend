@@ -1,7 +1,8 @@
 
   <!-- formulario seleccion --> 
+<div class="">
     <div class="row">
-        <h3 class="col-xs-6">{{dataTitular.nombre_cliente}}</h3>
+        <h2 class="col-xs-6">{{dataTitular.nombres}}</h2>
         <div class="col-xs-2">
             <label class="label-control">Filas</label>
             <select class="form-control input-sm" [(ngModel)]="rowsOnPage">
@@ -17,12 +18,10 @@
             <div class="col-xs-6">
                 <div class="row">
                     <select class="form-control input-sm" [(ngModel)]="sortBy">
-                        <option ngValue="codigo_coactiva">Codigo</option>
-                        <option ngValue="concepto">Concepto</option>
-                        <option ngValue="nombre_cliente">Nombre</option>
-                        <option ngValue="monto">Monto</option>
-                        <option ngValue="fecha_emision">Emision</option>
-                        <option ngValue="fecha_vencimiento">Vencimiento</option>
+                        <option ngValue="estado">Estado</option>
+                        <option ngValue="valorEmitido">Valor</option>
+                        <option ngValue="ano">Año</option>
+                        <option ngValue="direccion">Direccion</option>
                     </select>
                 </div>
             </div>
@@ -38,53 +37,46 @@
         </div>
     </div>
     <div class="panel panel-default ">
-      <div class="panel-heading">Número de registros: {{numRegisters}}</div> 
-      <table class="table  table-striped table-sm" [mfData]="data " #mf="mfDataTable"
-             [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
-          <thead>
-          <tr>
-              <th>
-                  <mfDefaultSorter by="codigo_coactiva">Codigo</mfDefaultSorter>
-              </th>
-              <th>
-                  <mfDefaultSorter by="concepto">Concepto</mfDefaultSorter>
-              </th>
-              <th>
-                  <mfDefaultSorter by="nombre_cliente">Nombre</mfDefaultSorter>
-              </th>
-              <th>
-                  <span>Estado</span>
-              </th>
-              <th>
-                  <mfDefaultSorter by="monto">Monto</mfDefaultSorter>
-              </th>
-              <th>
-                  <mfDefaultSorter by="fecha_emision">Emision</mfDefaultSorter>
-              </th>
-              <th>
-                  <mfDefaultSorter by="fecha_vencimiento">vencimiento</mfDefaultSorter>
-              </th>          
-          </tr>          
-          </thead>
-          <tbody>
-          <tr *ngFor="let item of mf.data" >
-              <td>{{item.codigo_coactiva}}</td>
-              <td>{{item.concepto}}</td>
-              <td>{{item.nombre_cliente}}</td>
-              <td>{{item.estado | uppercase}}</td>
-              <td>{{item.monto}}</td>
-              <td>{{item.fecha_emision}}</td>
-              <td>{{item.fecha_vencimiento}}</td>      
-          </tr>
-          </tbody> 
-          <tfoot>
-          <tr>
-              <td colspan="10">
-                  <mfBootstrapPaginator [rowsOnPageSet]="[5,10,15]"></mfBootstrapPaginator>
-              </td>
-          </tr>
-         </tfoot>
-      </table>
-  </div>
-  <button (click)="generarOrden()" class="btn">Generar Orden</button>
+       <div class="panel-heading">Número de registros: {{numRegisters}}</div>
+       <input class="form-control" [(ngModel)]="filterQuery"/>
+       <div class="">
+        <table class="table  table-striped table-sm table-hover" [mfData]="data | dataFilter : filterQuery" #mf="mfDataTable"
+               [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
+            <thead>
+            <tr>
+                <th>
+                    <mfDefaultSorter by="estado">Estado</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="valor">Valor</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="ano">Año</mfDefaultSorter>
+                </th>
+                <th>
+                    <mfDefaultSorter by="direccion">Dirección</mfDefaultSorter>
+                </th>           
+            </tr>
+            
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of mf.data" (click)="open(content,item)" >
+                <td>{{item.estado}}</td>
+                <td>{{item.valor}}</td>
+                <td>{{item.ano}}</td>
+                <td>{{item.direccion}}</td>    
+            </tr>
+            </tbody> 
+            <tfoot>
+            <tr>
+                <td colspan="10">
+                    <mfBootstrapPaginator [rowsOnPageSet]="[5,10,15]"></mfBootstrapPaginator>
+                </td>
+            </tr>
+           </tfoot>
+        </table>
+       </div>
+    </div>
+</div>
+<button (click)="generarOrden()" class="btn">Generar Orden</button>
   <!-- formulario seleccion -->  

@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {RouterModule} from '@angular/router'
+import {RouterModule,Routes} from '@angular/router'
 
 import { CommonModule }      from '@angular/common';
 import { DataTableModule } from "angular2-datatable";
@@ -23,15 +23,15 @@ const routes = [
   component : MypagtableComponent
 },
 {
-  path: 'titulares', 
+  path: 'ag/titulares', 
   component : TitularesComponent
 },
 {
-  path : 'course/:id',
+  path : 'ag/course/:id',
   component: TitularesComponent
 },
 {
-  path : 'titularesemitidos',
+  path : 'ag/titularesemitidos',
   component: TitularesEmitidosComponent
 }
 

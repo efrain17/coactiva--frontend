@@ -6,7 +6,7 @@ import 'rxjs/add/operator/toPromise';
 
 export class ApiService {
   numRegisters: number
-  BASE_URL="http://localhost:9000"
+  BASE_URL="http://localhost:9000/api"
 
   constructor(private http:Http) {
     this.numRegisters=0
@@ -26,7 +26,7 @@ export class ApiService {
   }
 
   getCarteraDeudores(){
-    let url=this.BASE_URL+'/deudores';
+    let url=this.BASE_URL+'/deudoresFiltrados';
     return this.http.get(url)
       .toPromise()
       .then(response => response.json())
@@ -40,9 +40,17 @@ export class ApiService {
       .then(response => response.json())
       .catch(this.error)
   }
+  
+  getDeudorSelected(codCatastro){
+    let url=this.BASE_URL+'/deudas/'+codCatastro;
+    return this.http.get(url)
+      .toPromise()
+      .then(response => response.json())
+      .catch(this.error)
+  }
 
   getCarteraEmitidos(){
-    let url='/data/carteraEmitido.json';
+    let url=this.BASE_URL+'/deudoresOrdenPagodb';
     return this.http.get(url)
       .toPromise()
       .then(response => response.json())
@@ -68,12 +76,11 @@ export class ApiService {
 
   //oden pago 
   ordenPago(params: String) {
-        return this.http.get(this.BASE_URL + '/ordpago?' +params)
+        return this.http.get(this.BASE_URL + '/ordenarPago/' +params)
             .toPromise()
             .then(response=> response.toString())
             .catch(this.error)
     }
-
 
 }
 

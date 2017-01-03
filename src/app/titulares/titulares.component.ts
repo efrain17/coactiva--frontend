@@ -9,7 +9,6 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-titulares',
   templateUrl: './titulares.component.html',
-  providers: [TitularesService]
 })
 
 export class TitularesComponent implements OnInit {
@@ -17,11 +16,10 @@ export class TitularesComponent implements OnInit {
   private data;
   private filterQuery = "";
   private rowsOnPage = 10;
-  private sortBy = "CodigoCatastral";
+  private sortBy = "codigocatastral";
   private sortOrder = "asc";
   private numRegisters:number ;
   closeResult: string;
-
 
   constructor(private http: Http,
   			      private as: ApiService,
@@ -43,14 +41,14 @@ export class TitularesComponent implements OnInit {
 	return a.city.length;
   }
 
-  gotoSeleccion(array){
+  setToSeleccion(array){
     // hacer consulta para filtrar todas las deudas de un titular s
     this.titularesSv.setTitularSelected(array)
-    console.log(this.titularesSv.getTitularSelected())
+    this.titularesSv.setModalSelected("deudores")
   }
 
   open(content,array) {
-    this.titularesSv.setTitularSelected(array)
+    this.setToSeleccion(array)
     
     this.modalService.open(content).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;

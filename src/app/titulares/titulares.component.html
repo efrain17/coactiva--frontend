@@ -17,12 +17,12 @@
                 <div class="col-xs-6">
                     <div class="row">
                         <select class="form-control input-sm" [(ngModel)]="sortBy">
-                            <option ngValue="CodigoCatastral">Codigo</option>
-                            <option ngValue="Nombres">Nombres</option>
-                            <option ngValue="Estado">Estado</option>
-                            <option ngValue="Valor">Valor</option>
-                            <option ngValue="Ano">Año</option>
-                            <option ngValue="Direccion">Direccion</option>
+                            <option ngValue="codigocatastral">Codigo</option>
+                            <option ngValue="nombres">Nombres</option>
+                            <option ngValue="estado">Estado</option>
+                            <option ngValue="valor">Valor</option>
+                            <option ngValue="ano">Año</option>
+                            <option ngValue="direccion">Direccion</option>
                         </select>
                     </div>
                 </div>
@@ -46,34 +46,34 @@
                 <thead>
                 <tr>
                     <th>
-                        <mfDefaultSorter by="CodigoCatastral">Codigo</mfDefaultSorter>
+                        <mfDefaultSorter by="codigocatastral">Codigo</mfDefaultSorter>
                     </th>
                     <th>
-                        <mfDefaultSorter by="Nombres">Nombres</mfDefaultSorter>
+                        <mfDefaultSorter by="nombres">Nombres</mfDefaultSorter>
                     </th>
                     <th>
-                        <mfDefaultSorter by="Estado">Estado</mfDefaultSorter>
+                        <mfDefaultSorter by="estado">Estado</mfDefaultSorter>
                     </th>
                     <th>
-                        <mfDefaultSorter by="Valor">Valor</mfDefaultSorter>
+                        <mfDefaultSorter by="valor">Valor</mfDefaultSorter>
                     </th>
                     <th>
-                        <mfDefaultSorter by="Ano">Año</mfDefaultSorter>
+                        <mfDefaultSorter by="ano">Año</mfDefaultSorter>
                     </th>
                     <th>
-                        <mfDefaultSorter by="Direccion">Dirección</mfDefaultSorter>
+                        <mfDefaultSorter by="direccion">Dirección</mfDefaultSorter>
                     </th>           
                 </tr>
                 
                 </thead>
                 <tbody>
                 <tr *ngFor="let item of mf.data" (click)="open(content,item)" >
-                    <td>{{item.CodigoCatastral}}</td>
-                    <td>{{item.Nombres}}</td>
-                    <td>{{item.Estado}}</td>
-                    <td>{{item.Valor}}</td>
-                    <td>{{item.Ano}}</td>
-                    <td>{{item.Direccion}}</td>    
+                    <td>{{item.codigocatastral}}</td>
+                    <td>{{item.nombres}}</td>
+                    <td>{{item.estado}}</td>
+                    <td>{{item.valor}}</td>
+                    <td>{{item.ano}}</td>
+                    <td>{{item.direccion}}</td>    
                 </tr>
                 </tbody> 
                 <tfoot>
