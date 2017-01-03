@@ -25,6 +25,10 @@
     margin-top: 3px
 }
 
+.fontHeaders{
+  font-family: 'Pacifico', cursive;
+}
+
 .table-fixed{
   width: 100%;
   background-color: #f3f3f3;
