@@ -40,7 +40,8 @@
                             <option ngValue="nombres">Nombres</option>
                             <option ngValue="estado">Estado</option>
                             <option ngValue="valor">Valor</option>
-                            <option ngValue="ano">Año</option>
+                            <option ngValue="ano">Año</option>                            
+                            <option ngValue="fecha_ingreso">Emisión</option>
                             <option ngValue="direccion">Direccion</option>
                         </select>
                     </div>
@@ -80,8 +81,12 @@
                         <mfDefaultSorter by="ano">Año</mfDefaultSorter>
                     </th>
                     <th>
+                        <mfDefaultSorter by="fecha_ingreso">Emision</mfDefaultSorter>
+                    </th>  
+                    <th>
                         <mfDefaultSorter by="direccion">Dirección</mfDefaultSorter>
-                    </th>           
+                    </th> 
+                           
                 </tr>
                 
                 </thead>
@@ -92,7 +97,8 @@
                     <td>{{item.estado}}</td>
                     <td>{{item.valor}}</td>
                     <td>{{item.ano}}</td>
-                    <td>{{item.direccion}}</td>    
+                    <td>{{item.fecha_ingreso}}</td> 
+                    <td>{{item.direccion}}</td> 
                 </tr>
                 </tbody> 
                 <tfoot>
