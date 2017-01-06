@@ -12,6 +12,8 @@
                         <select class="form-control input-sm" (click)="buscarTitulares()" [(ngModel)]="sortBytitulares">
                             <option ngValue="emitidos">Emitidos</option>
                             <option ngValue="vencidos">Vencidos</option>
+                            <option ngValue="aPagoHabil">Auto de pago hábiles</option>
+                            <option ngValue="aPagoEmitido">Auto de pago Emitidos</option>
                         </select>
                     </div>
                 </div>
@@ -115,7 +117,7 @@
   </div>
  
   <div size="lg" class="modal-body" > 
-  <app-select-titular></app-select-titular>
+  <app-select-orden-pago></app-select-orden-pago>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-secondary" (click)="c('Close click')">Close</button>

@@ -3,7 +3,8 @@ import { Http } from '@angular/http';
 import { ApiService } from '../services/api.service'
 import { TitularesService } from '../services/titulares.service'
 import { Cartera } from '../common/interface'
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap'
+import { TitularesComponent } from '../titulares/titulares.component'
 
 @Component({
   selector: 'app-titulares-emitidos',
@@ -35,10 +36,15 @@ export class TitularesEmitidosComponent implements OnInit {
 
   buscarTitulares(){
       if (this.sortBytitulares=="emitidos")
-           this.as.getCarteraEmitidos()
-                  .then(cartera => this.data = cartera )
-      else this.as.getCarteraVencidos()
-                  .then(cartera => this.data = cartera )
+       this.as.getCarteraEmitidos()
+              .then(cartera => this.data = cartera )
+      else if (this.sortBytitulares=="vencidos")
+        this.as.getCarteraVencidos()
+              .then(cartera => this.data = cartera )
+      else if (this.sortBytitulares=="aPagoHabil")
+        this.as.getCarteraAutoPagoHabil()
+              .then(cartera => this.data = cartera )
+              
       console.log(this.sortBytitulares)
   }
 
@@ -54,6 +60,10 @@ export class TitularesEmitidosComponent implements OnInit {
       // hacer consulta para filtrar todas las deudas de un titular s
       this.titularesSv.setTitularSelected(array)
       this.titularesSv.setModalSelected("ordenPago")
+  }
+
+  filtroSeleccionado(idCoactiva){
+    this.data=this.data.filter(data=>data.codigocatastral!=idCoactiva)
   }
   
   open(content,array) {

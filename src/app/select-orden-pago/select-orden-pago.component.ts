@@ -2,15 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { ApiService } from '../services/api.service'
 import { TitularesService } from '../services/titulares.service'
-import { TitularesComponent } from '../titulares/titulares.component'
+import { TitularesEmitidosComponent } from '../titulares-emitidos/titulares-emitidos.component'
 
 @Component({
-  selector: 'app-select-titular',
-  templateUrl: './select-titular.component.html',
-  styleUrls: ['./select-titular.component.css']
+  selector: 'app-select-orden-pago',
+  templateUrl: '../select-titular/select-titular.component.html',
+  styleUrls: ['../select-titular/select-titular.component.css']
 })
-export class SelectTitularComponent implements OnInit {
-
+export class SelectOrdenPagoComponent implements OnInit {
   public data
   private dataTitular
   private filterQuery = ""
@@ -22,10 +21,11 @@ export class SelectTitularComponent implements OnInit {
   private reportDir:string='http://www.pdf995.com/samples/pdf.pdf'
   private windowPropiedad='width=600,height=600,left=50,top=50,toolbar=yes'
 
+  
   constructor(private http: Http,
-  			      private as: ApiService,
+  			  private as: ApiService,
               private titularesSv:TitularesService,
-              private titularesCp:TitularesComponent) { 
+              private titularesCp:TitularesEmitidosComponent) { 
   }
 
   ngOnInit() {
@@ -36,7 +36,7 @@ export class SelectTitularComponent implements OnInit {
   }
 
   generarOrden(){
-    this.as.ordenPago(this.dataTitular.codigocatastral)
+    this.as.repetirOrdenPago(this.dataTitular.codigocatastral)
       .then(reportDir=>{this.reportDir=reportDir
         this.titularesCp.filtroSeleccionado(this.dataTitular.codigocatastral)
         window.open(this.reportDir,'',this.windowPropiedad) }) 

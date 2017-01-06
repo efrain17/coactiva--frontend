@@ -47,6 +47,10 @@ export class TitularesComponent implements OnInit {
     this.titularesSv.setModalSelected("deudores")
   }
 
+  filtroSeleccionado(idCoactiva){
+    this.data=this.data.filter(data=>data.codigocatastral!=idCoactiva)
+  }
+
   open(content,array) {
     this.setToSeleccion(array)
     

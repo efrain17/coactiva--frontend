@@ -58,7 +58,15 @@ export class ApiService {
   }
 
   getCarteraVencidos(){
-    let url='/data/cartera.json';
+    let url=this.BASE_URL+'/deudoresOrdenVencidos';
+    return this.http.get(url)
+      .toPromise()
+      .then(response => response.json())
+      .catch(this.error)
+  }
+
+  getCarteraAutoPagoHabil(){
+    let url=this.BASE_URL+'/deudoresAutoPagoHabil';
     return this.http.get(url)
       .toPromise()
       .then(response => response.json())
@@ -74,13 +82,20 @@ export class ApiService {
   		.then(headlines => headlines.find(headline=> headline.cedulapersona==id))
   }
 
-  //oden pago 
   ordenPago(params: String) {
         return this.http.get(this.BASE_URL + '/ordenarPago/' +params)
             .toPromise()
             .then(response=> response.toString())
             .catch(this.error)
     }
+
+  repetirOrdenPago(params: String) {
+        return this.http.get(this.BASE_URL + '/repetirOrdenarPago/' +params)
+            .toPromise()
+            .then(response=> response.toString())
+            .catch(this.error)
+    }
+
 
 }
 
