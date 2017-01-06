@@ -1,9 +1,33 @@
 <!-- <app-juicio-coactiva></app-juicio-coactiva> -->
 <!-- <demo></demo>> -->
-<nav >
-      <a routerLink="/ag/titulares">Titulares Deudores</a>
-      <a routerLink="/ag/titularesemitidos">Tirulares Emitidos</a>
-</nav>
+<style>
+  .horizontal-collapse {
+    height: 70px;
+  }
+  .navbar-collapse.in {
+    overflow-y: hidden;
+  }
+</style>
+<div ng-controller="CollapseDemoCtrl">
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" ng-click="isNavCollapsed = !isNavCollapsed">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" routerLink="/ag/titulares">Inicio</a>
+		</div>
+		<div class="collapse navbar-collapse" uib-collapse="isNavCollapsed">
+			<ul class="nav navbar-nav">
+                        <li><a routerLink="/ag/titulares">Titulares Deudores</a></li>
+				<li><a routerLink="/ag/titularesemitidos">Tirulares Emitidos</a></li>     
+			</ul>
+		</div>
+	</nav>
+</div>
+
 <section>
       <router-outlet></router-outlet>
 </section>
