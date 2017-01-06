@@ -18,9 +18,9 @@ export class SelectOrdenPagoComponent implements OnInit {
   private sortOrder = "asc"
   private numRegisters:number
   private titular:string
-  private reportDir:string='http://www.pdf995.com/samples/pdf.pdf'
-  private windowPropiedad='width=600,height=600,left=50,top=50,toolbar=yes'
-
+  private reportDir:string = 'http://localhost:9000/api/reporteGeneral?idcatastral='
+  private windowPropiedad = 'width=600,height=600,left=50,top=50,toolbar=yes'
+  private shortidReport = 'Hynrwk5rg'
   
   constructor(private http: Http,
   			  private as: ApiService,
@@ -37,9 +37,9 @@ export class SelectOrdenPagoComponent implements OnInit {
 
   generarOrden(){
     this.as.repetirOrdenPago(this.dataTitular.codigocatastral)
-      .then(reportDir=>{this.reportDir=reportDir
+      .then(reportDir=>{
         this.titularesCp.filtroSeleccionado(this.dataTitular.codigocatastral)
-        window.open(this.reportDir,'',this.windowPropiedad) }) 
+        window.open(this.reportDir+this.dataTitular.codigocatastral+"&shortid="+this.shortidReport,'',this.windowPropiedad) }) 
    }
 
    titularSelected(dataTitular){
