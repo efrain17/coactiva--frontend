@@ -1,14 +1,20 @@
 <div class="container">
     <div class="">
         <div class="row">
-            <h2 class="col-xs-6">Buscar contribuyentes</h2>
-            <div class="col-xs-2">
-                <label class="label-control">Filas</label>
-                <select class="form-control input-sm" [(ngModel)]="rowsOnPage">
-                    <option [ngValue]="5">5</option>
-                    <option [ngValue]="10">10</option>
-                    <option [ngValue]="15">15</option>
-                </select>
+            <h2 class="col-xs-5">Buscar contribuyentes</h2>
+             
+            <div class="col-xs-3 aling-abajo">
+                <button type="button" class="col-xs-4 btn btn-default" (click)="ordenarVarios()">
+                  <span class="glyphicon glyphicon-book" aria-hidden="true"></span>Orden 
+                </button>
+                <div class="col-xs-8">
+                    <label class="label-control">Filas</label>
+                    <select class="form-control input-sm" [(ngModel)]="rowsOnPage">
+                        <option [ngValue]="5">5</option>
+                        <option [ngValue]="10">10</option>
+                        <option [ngValue]="15">15</option>
+                    </select>   
+                </div>
             </div>
             <div class="col-xs-4">
                 <div class="row">
@@ -46,6 +52,9 @@
                 <thead>
                 <tr>
                     <th>
+                        
+                    </th>
+                    <th>
                         <mfDefaultSorter by="codigocatastral">Codigo</mfDefaultSorter>
                     </th>
                     <th>
@@ -67,8 +76,11 @@
                 
                 </thead>
                 <tbody>
-                <tr *ngFor="let item of mf.data" (click)="open(content,item)" >
-                    <td>{{item.codigocatastral}}</td>
+                <tr *ngFor="let item of mf.data" >
+                    <td>
+                        <input type="checkbox" [(ngModel)]="item.select">
+                    </td>
+                    <td (click)="open(content,item)">{{item.codigocatastral}}</td>
                     <td>{{item.nombres}}</td>
                     <td>{{item.estado}}</td>
                     <td>{{item.valor}}</td>
