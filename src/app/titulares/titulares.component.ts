@@ -15,7 +15,8 @@ var FileSaver = require('file-saver');
 })
 
 export class TitularesComponent implements OnInit {
-
+  private smsBoton : string = 'Generar Orden';
+  private reporState: Boolean = false;
   private data;
   private filterQuery = "";
   private rowsOnPage = 10;
@@ -83,6 +84,8 @@ export class TitularesComponent implements OnInit {
   }
 
   ordenarVarios() {
+    this.reporState = true;
+    this.smsBoton  = 'Generando ..';
     let dataSelect = this.data.filter(date => date.select==true)
     dataSelect = dataSelect.map(date =>date.codigocatastral)
     console.log(dataSelect)
@@ -91,10 +94,12 @@ export class TitularesComponent implements OnInit {
   }
 
   downloadFile(data: any){ 
-    var blob = new Blob([data.blob()], { type: 'application/pd' });
+    var blob = new Blob([data.blob()], { type: 'application/pdf' });
     var url= window.URL.createObjectURL(blob);
-    var filename = 'test.pdf';
+    var filename = 'Ordenes de Pago.pdf';
     FileSaver.saveAs(blob, filename);
+    this.reporState = false;
+    this.smsBoton = 'Generar Orden';
     //window.open(url,'',this.windowPropiedad);
   }
 

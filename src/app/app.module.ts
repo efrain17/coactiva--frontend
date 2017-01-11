@@ -17,6 +17,7 @@ import { SelectTitularComponent } from './select-titular/select-titular.componen
 import { TitularesEmitidosComponent } from './titulares-emitidos/titulares-emitidos.component';
 import { MypagtableComponent } from './mypagtable/mypagtable.component';
 import { SelectOrdenPagoComponent } from './select-orden-pago/select-orden-pago.component';
+import { LoginComponent } from './login/login.component';
 
 const routes = [
 {
@@ -49,6 +50,7 @@ const routes = [
     TitularesEmitidosComponent,
     MypagtableComponent,
     SelectOrdenPagoComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
