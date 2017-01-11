@@ -12,7 +12,6 @@ export class ApiService {
 
   constructor(private http:Http) {
     this.numRegisters=0
-
   }
 
   getnumRegister(){return this.numRegisters}
