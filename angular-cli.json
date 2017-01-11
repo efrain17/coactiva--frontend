@@ -19,9 +19,18 @@
       "mobile": false,
       "styles": [
         "styles.css",
-        "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "./assets/dist/css/AdminLTE.min.css",
+        "./assets/dist/css/skins/_all-skins.min.css",
+        "./assets/lib/font-awesome-4.4.0/css/font-awesome.min.css",
+        "./assets/lib/ionicons-2.0.1/css/ionicons.min.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "./assets/lib/jQuery/jQuery-2.2.0.min.js",
+        "./assets/lib/bootstrap/js/bootstrap.min.js",
+        "./assets/dist/js/app.min.js",
+        "./assets/dist/js/demo.js"
+      ],
       "environments": {
         "source": "environments/environment.ts",
         "dev": "environments/environment.ts",
