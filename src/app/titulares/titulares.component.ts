@@ -89,8 +89,10 @@ export class TitularesComponent implements OnInit {
     let dataSelect = this.data.filter(date => date.select==true)
     dataSelect = dataSelect.map(date =>date.codigocatastral)
     console.log(dataSelect)
-    this.as.ordenarPagoVarios(dataSelect)
-         .then(report => this.downloadFile(report) )
+    Promise.all([ 
+      this.as.ordenarVariosReport(dataSelect),
+      this.as.ordenarPagoVarios(dataSelect)])
+    .then(report => this.downloadFile(report[0]) )
   }
 
   downloadFile(data: any){ 
@@ -98,8 +100,10 @@ export class TitularesComponent implements OnInit {
     var url= window.URL.createObjectURL(blob);
     var filename = 'Ordenes de Pago.pdf';
     FileSaver.saveAs(blob, filename);
+    
     this.reporState = false;
     this.smsBoton = 'Generar Orden';
+    this.data=this.data.filter(data=>data.select!=true)
     //window.open(url,'',this.windowPropiedad);
   }
 

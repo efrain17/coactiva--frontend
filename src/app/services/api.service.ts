@@ -97,7 +97,7 @@ export class ApiService {
             .catch(this.error)
   }
 
-  ordenarPagoVarios(params: Object) {
+  ordenarVariosReport(params: Object) {
         let body = JSON.stringify(params)
         console.log(body)
         let headers = new Headers({ 'Content-Type': 'application/json' })
@@ -105,6 +105,18 @@ export class ApiService {
                       method: RequestMethod.Post,
                       responseType: ResponseContentType.Blob })
         return this.http.post(this.BASE_URL + "/reporteVarios", body, options)
+              .toPromise()
+              .catch(this.error);
+    }
+
+  ordenarPagoVarios(params: Object) {
+        let body = JSON.stringify(params)
+        console.log(body)
+        let headers = new Headers({ 'Content-Type': 'application/json' })
+        let options = new RequestOptions({ headers: headers,
+                      method: RequestMethod.Post,
+                      responseType: ResponseContentType.Blob })
+        return this.http.post(this.BASE_URL + "/ordenarPagoVarios", body, options)
               .toPromise()
               .catch(this.error);
     }
